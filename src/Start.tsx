@@ -12,10 +12,7 @@ const Start = () => {
     <div className="d-flex" id="wrapper">
       <div className="border-end bg-white" id="sidebar-wrapper">
         <div className="sidebar-heading border-bottom bg-light">
-          <img
-            id="op-logo"
-            src="/src/assets/img/01_1_Onlineprinters_Logo_RGB.png"
-          ></img>
+          <img id="op-logo" src="01_1_Onlineprinters_Logo_RGB.png"></img>
         </div>
         <div className="list-group list-group-flush">
           <Link to="/" className="list-group-item list-group-item-action">
