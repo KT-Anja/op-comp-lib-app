@@ -1,0 +1,56 @@
+// TODO: tidy up
+
+.form-text,
+.valid-feedback,
+.invalid-feedback {
+	padding-left: 0.625rem;
+}
+.form-field-wrapper {
+	position: relative;
+	.form-label {
+		transition: all 200ms cubic-bezier(0, 0, 0.2, 1);
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: calc(100% - 1.5rem);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transform-origin: top left;
+		transform: translate(0.625rem, 0.5rem);
+
+		&.hasFocus,
+		&.hasValue {
+			left: 0.375rem;
+			font-size: 0.75rem;
+			padding: 0 0.25rem;
+			background-color: $body-bg;
+			transform: translateY(-50%);
+			transition: all 200ms cubic-bezier(0, 0, 0.2, 1);
+		}
+		&.hasFocus {
+			color: $color-brand;
+		}
+	}
+}
+.form-select:disabled {
+	background-image: none;
+}
+
+input {
+	&:hover:not(:disabled):not(:focus) {
+		border-color: $color-black;
+	}
+}
+
+.form-select {
+	option {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.was-validated .form-control:invalid {
+	background-size: 1.25rem 1.25rem;
+}

@@ -1,0 +1,29 @@
+.alert {
+	font-size: 0.875rem;
+	// padding: 0.53125rem 0.9375rem;
+	padding: 0.6875rem 0.9375rem 0.5625rem 0.9375rem;
+	line-height: 1.125rem;
+	border: none;
+	display: flex;
+	i {
+		margin-right: 0.375rem;
+		font-size: 1.125rem;
+	}
+
+	&.alert-info {
+		color: darken($color-info, 15);
+		background-color: lighten($color-info, 35);
+	}
+	&.alert-success {
+		color: $color-success;
+		background-color: lighten($color-success, 60);
+	}
+	&.alert-danger {
+		color: $color-error;
+		background-color: lighten($color-error, 45);
+	}
+	&.alert-warning {
+		color: darken($color-warning, 15);
+		background-color: lighten($color-warning, 40);
+	}
+}

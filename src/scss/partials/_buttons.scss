@@ -1,0 +1,104 @@
+.btn {
+	// 7 15 5 15
+	padding: 0.4375rem 0.9375rem 0.3125rem 0.9375rem;
+
+	&.btn-primary {
+		@include button-variant(
+			$color-brand,
+			$color-brand,
+			$color-anthracite,
+			darken($color-brand, 2),
+			darken($color-brand, 2),
+			$color-anthracite,
+			darken($color-brand, 2),
+			darken($color-brand, 2),
+			$color-anthracite,
+			$color-border-gray,
+			$color-border-gray,
+			lighten($color-anthracite, 35%)
+		);
+	}
+
+	&.btn-secondary {
+		@include button-variant(
+			$color-anthracite,
+			$color-anthracite,
+			$color-white,
+			$color-black,
+			$color-black,
+			$color-white,
+			$color-black,
+			$color-black,
+			$color-white,
+			$color-border-gray,
+			$color-border-gray,
+			lighten($color-anthracite, 35%)
+		);
+	}
+	&.btn-default {
+		@include button-variant(
+			$color-white,
+			$color-anthracite,
+			$color-anthracite,
+			darken($color-white, 5%),
+			$color-anthracite,
+			$color-anthracite,
+			darken($color-white, 5%),
+			$color-anthracite,
+			$color-anthracite,
+			$color-white,
+			lighten($color-anthracite, 35%),
+			lighten($color-anthracite, 35%)
+		);
+	}
+
+	&.disabled,
+	&:disabled {
+		opacity: 1;
+	}
+
+	&.btn-icon-only {
+		height: 2.375rem;
+		width: 2.375rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		i {
+			font-size: 1.25rem;
+		}
+	}
+
+	&.btn-with-icon {
+		i {
+			margin-right: 0.4rem;
+			font-size: 1.125rem;
+			&.text-info {
+				color: darken($color-info, 15%) !important;
+			}
+			&.text-warning {
+				color: darken($color-warning, 15%) !important;
+			}
+		}
+		&:disabled i {
+			&.text-success,
+			&.text-info,
+			&.text-warning,
+			&.text-danger {
+				color: lighten($color-anthracite, 35%) !important;
+			}
+		}
+	}
+}
+
+// TODO: place somewhere else
+a.link-with-icon {
+	i {
+		margin-right: 0.4rem;
+	}
+	text-decoration: none;
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: underline;
+	}
+}

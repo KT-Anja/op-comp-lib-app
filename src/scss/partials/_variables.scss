@@ -1,0 +1,141 @@
+// Variables
+//
+// Color system
+//
+$color-brand: #ff9900;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-light-gray: #f0f0f0;
+$color-dark-gray: lighten($color-black, 50);
+$color-bg-gray: #fafafa;
+$color-anthracite: #2b2b2b;
+$color-border-gray: #cfcfcf;
+
+$color-info: #3a99fa;
+$color-success: #50a400;
+$color-error: #c4265c;
+$color-warning: #ffdd00;
+
+// Modify map $theme-colors
+$theme-colors: (
+	primary: $color-brand,
+	secondary: $color-anthracite,
+	success: $color-success,
+	info: $color-info,
+	warning: $color-warning,
+	danger: $color-error,
+	light: $color-light-gray,
+	dark: $color-dark-gray
+);
+
+// add colors to map $theme-colors
+$custom-colors: (
+	'black': $color-black,
+	'gray-bg': $color-bg-gray,
+	'anthracite': $color-anthracite
+);
+
+$theme-colors: map-merge(
+	$map1: $theme-colors,
+	$map2: $custom-colors
+);
+
+// Body
+//
+//# Settings for the '<body>' element
+
+// $body-bg: $color-bg-gray;
+// $body-color: $color-black;
+
+// Links
+//
+//# Style anchor elements
+// TODO: maybe anthracite / color-secondary? (remove class from showcase?)
+$link-color: $color-black;
+$link-decoration: underline;
+$link-hover-decoration: none;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries
+
+// TODO
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// TODO
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-color: $color-border-gray;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-base: 'Roboto';
+$font-size-base: 1rem;
+
+$h1-font-size: $font-size-base * 2.1875;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.25;
+$h4-font-size: $font-size-base;
+
+// Buttons & Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$input-btn-padding-x: 0.9375rem;
+$input-btn-focus-color: $color-border-gray;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+$btn-disabled-opacity: 0.4;
+
+//Forms
+
+// Text
+// $form-text-margin-top: 0;
+$form-text-font-size: 0.75rem;
+$form-text-color: $color-dark-gray;
+
+// Label
+$form-label-color: $color-dark-gray;
+
+// Variables
+$input-padding-x: 0.625rem;
+$input-color: $color-black;
+$input-border-color: $color-border-gray;
+$input-disabled-bg: $color-light-gray;
+$input-focus-color: $color-black;
+$input-focus-border-color: $color-brand;
+$input-focus-box-shadow: none;
+
+// Check
+// $form-check-input-width: 1.5em; //switch
+$form-check-input-border: 1px solid $color-anthracite;
+$form-check-input-border-radius: 0.1875em;
+$form-check-input-focus-border: $color-anthracite;
+$form-check-input-focus-box-shadow: none;
+$form-check-input-checked-bg-color: $color-anthracite;
+// Switch
+$form-switch-color: $color-black;
+$form-switch-width: 2.4375em;
+$form-switch-focus-color: $color-anthracite;
+$form-switch-checked-color: $color-white;
+
+$form-select-focus-box-shadow: none;
+
+// Form validation
+$form-feedback-valid-color: $color-success;
+$form-feedback-invalid-color: $color-error;
+
+$form-feedback-icon-valid: none;
+$form-feedback-icon-invalid: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="#{$form-feedback-invalid-color}" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>');
+
+// Breadcrumbs
+$breadcrumb-font-size: 0.875rem;
+$breadcrumb-item-padding-x: 0.25rem;

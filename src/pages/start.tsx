@@ -1,11 +1,10 @@
 import { Link, Route, Routes } from "react-router-dom";
-import "./App.css";
-import Alerts from "./pages/alerts";
-import Buttons from "./pages/buttons";
-import Forms from "./pages/forms";
-import Icons from "./pages/icons";
-import Links from "./pages/links";
-import Typography from "./pages/typography";
+import Alerts from "./alerts";
+import Buttons from "./buttons";
+import Forms from "./forms";
+import Icons from "./icons";
+import Links from "./links";
+import Typography from "./typography";
 
 const Start = () => {
   return (
@@ -64,4 +63,5 @@ const Start = () => {
     </div>
   );
 };
+
 export default Start;
