@@ -1,14 +1,10 @@
-import { ChangeEvent, FocusEvent, useState } from 'react'
 import classNames from 'classnames'
+import { ChangeEvent, FocusEvent, InputHTMLAttributes, useState } from 'react'
 
-interface InputFieldProps {
-	type: 'text' | 'email' | 'password'
+interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string
 	label: string
 	helperText?: string
-	disabled?: boolean
-	required?: boolean
-	value?: string
 	errorMessage?: string
 	onChange?: (event: React.ChangeEvent) => void
 	onFocus?: (event: React.FocusEvent) => void
@@ -16,16 +12,14 @@ interface InputFieldProps {
 }
 
 const InputField = ({
-	type,
 	id,
 	label,
 	helperText,
-	disabled,
-	required,
 	errorMessage,
 	onChange,
 	onFocus,
-	onBlur
+	onBlur,
+	...rest
 }: InputFieldProps) => {
 	const [value, setValue] = useState<string>('')
 	const [isFocus, setIsFocus] = useState<boolean>(false)
@@ -53,21 +47,18 @@ const InputField = ({
 			onBlur(event)
 		}
 	}
-
 	return (
 		<>
-			<div className="form-field-wrapper mb-3">
+			<div className="form-field-wrapper mb-form-field">
 				<input
-					type={type}
 					className={classNames('form-control', {
 						'is-invalid': errorMessage
 					})}
 					id={id}
-					disabled={disabled}
-					required={required}
 					onChange={handleOnChange}
 					onFocus={handleOnFocus}
 					onBlur={handleOnBlur}
+					{...rest}
 				/>
 				<label
 					htmlFor={id}

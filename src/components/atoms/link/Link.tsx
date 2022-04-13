@@ -1,21 +1,21 @@
 import classNames from 'classnames'
+import { AnchorHTMLAttributes, ReactText } from 'react'
 
-interface LinkProps {
-	children: React.ReactNode
-	href: string
+interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+	children: ReactText
 	iconName?: string
 }
 
-const Link = ({ href, iconName, ...props }: LinkProps) => {
+const Link = ({ children, iconName, ...rest }: LinkProps) => {
 	return (
 		<a
-			href={href}
 			className={classNames({
 				'link-with-icon': iconName && iconName.length
 			})}
+			{...rest}
 		>
 			<i className={`fa-solid ${iconName}`} />
-			{props.children}
+			{children}
 		</a>
 	)
 }

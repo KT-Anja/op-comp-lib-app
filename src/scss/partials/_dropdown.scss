@@ -1,0 +1,20 @@
+.dropdown-toggle {
+	&::after {
+		content: none;
+	}
+	i {
+		position: absolute;
+		right: 0.835rem;
+		top: 0.6875rem;
+	}
+	&.btn-dropdown {
+		&:active,
+		&:focus,
+		&:active:focus {
+			box-shadow: none;
+		}
+	}
+}
+.dropdown-menu {
+	width: 100%;
+}

@@ -4,9 +4,19 @@
 .valid-feedback,
 .invalid-feedback {
 	padding-left: 0.625rem;
+
+	.form-check & {
+		padding-left: 0;
+		margin-left: -1.5rem;
+	}
 }
 .form-field-wrapper {
 	position: relative;
+	margin-bottom: 1.25rem;
+
+	.form-control:valid:focus {
+		border-color: $color-brand;
+	}
 	.form-label {
 		transition: all 200ms cubic-bezier(0, 0, 0.2, 1);
 		position: absolute;
@@ -33,12 +43,15 @@
 		}
 	}
 }
+
 .form-select:disabled {
 	background-image: none;
 }
 
-input {
-	&:hover:not(:disabled):not(:focus) {
+input,
+select {
+	// recheck behaviour
+	&:hover:not(:disabled):not(:focus):not(.is-invalid) {
 		border-color: $color-black;
 	}
 }
@@ -51,6 +64,12 @@ input {
 	}
 }
 
-.was-validated .form-control:invalid {
-	background-size: 1.25rem 1.25rem;
-}
+// .was-validated .form-control:invalid {
+// 	background-size: 1.25rem 1.25rem;
+// 	&:hover {
+// 		border-color: $color-error;
+// 	}
+// 	+ .form-label.hasFocus {
+// 		color: $color-error;
+// 	}
+// }

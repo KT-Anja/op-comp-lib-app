@@ -7,3 +7,13 @@
 .form-check-label {
 	margin-top: 0.0625rem;
 }
+
+.form-check-input {
+	&:disabled {
+		background-color: $color-border-gray;
+		border-color: $color-border-gray;
+		+ .form-check-label {
+			color: lighten($color-anthracite, 35%);
+		}
+	}
+}

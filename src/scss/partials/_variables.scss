@@ -40,6 +40,24 @@ $theme-colors: map-merge(
 	$map2: $custom-colors
 );
 
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+	0: 0,
+	1: $spacer * 0.25,
+	2: $spacer * 0.5,
+	3: $spacer,
+	4: $spacer * 1.5,
+	5: $spacer * 3
+) !default;
+$custom-spacer: (
+	'form-field': 1.25rem
+);
+$spacers: map-merge(
+	$map1: $spacers,
+	$map2: $custom-spacer
+);
+
 // Body
 //
 //# Settings for the '<body>' element
@@ -89,11 +107,15 @@ $h4-font-size: $font-size-base;
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 $input-btn-padding-x: 0.9375rem;
 $input-btn-focus-color: $color-border-gray;
+$input-btn-focus-box-shadow: none;
 
 // Buttons
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
 $btn-disabled-opacity: 0.4;
+$btn-active-box-shadow: none;
 
 //Forms
 
@@ -109,6 +131,7 @@ $form-label-color: $color-dark-gray;
 $input-padding-x: 0.625rem;
 $input-color: $color-black;
 $input-border-color: $color-border-gray;
+$input-box-shadow: none;
 $input-disabled-bg: $color-light-gray;
 $input-focus-color: $color-black;
 $input-focus-border-color: $color-brand;
@@ -121,21 +144,38 @@ $form-check-input-border-radius: 0.1875em;
 $form-check-input-focus-border: $color-anthracite;
 $form-check-input-focus-box-shadow: none;
 $form-check-input-checked-bg-color: $color-anthracite;
+$form-check-input-disabled-opacity: 1;
+
 // Switch
 $form-switch-color: $color-black;
 $form-switch-width: 2.4375em;
 $form-switch-focus-color: $color-anthracite;
 $form-switch-checked-color: $color-white;
 
+//Select
+$form-select-color: $color-black;
 $form-select-focus-box-shadow: none;
-
+$form-select-indicator: none;
 // Form validation
-$form-feedback-valid-color: $color-success;
+$form-feedback-valid-color: $color-border-gray;
 $form-feedback-invalid-color: $color-error;
 
 $form-feedback-icon-valid: none;
 $form-feedback-icon-invalid: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="#{$form-feedback-invalid-color}" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>');
 
+$form-validation-states: (
+	'invalid': (
+		'color': $form-feedback-invalid-color,
+		'icon': $form-feedback-icon-invalid,
+		'focus-box-shadow': none
+	)
+);
+
 // Breadcrumbs
 $breadcrumb-font-size: 0.875rem;
 $breadcrumb-item-padding-x: 0.25rem;
+
+// Dropdown
+// $dropdown-color: $color-black;
+// $dropdown-border-color: $color-border-gray;
+// $dropdown-bg: $color-white;
