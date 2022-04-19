@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import Alerts from "./alerts";
+import Breadcrumbs from "./breadcrumbs";
 import Buttons from "./buttons";
 import Forms from "./forms";
 import Icons from "./icons";
@@ -34,6 +35,12 @@ const Start = () => {
           <Link to="/icons" className="list-group-item list-group-item-action">
             Icons
           </Link>
+          <Link
+            to="/breadcrumbs"
+            className="list-group-item list-group-item-action"
+          >
+            Breadcrumbs
+          </Link>
         </div>
       </div>
       <div id="page-content-wrapper">
@@ -46,6 +53,7 @@ const Start = () => {
             <Route path="/forms" element={<Forms />} />
             <Route path="/links" element={<Links />} />
             <Route path="/icons" element={<Icons />} />
+            <Route path="/breadcrumbs" element={<Breadcrumbs />} />
           </Routes>
         </div>
       </div>

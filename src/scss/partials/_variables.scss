@@ -63,7 +63,7 @@ $spacers: map-merge(
 //# Settings for the '<body>' element
 
 // $body-bg: $color-bg-gray;
-// $body-color: $color-black;
+$body-color: $color-black;
 
 // Links
 //
@@ -174,8 +174,5 @@ $form-validation-states: (
 // Breadcrumbs
 $breadcrumb-font-size: 0.875rem;
 $breadcrumb-item-padding-x: 0.25rem;
-
-// Dropdown
-// $dropdown-color: $color-black;
-// $dropdown-border-color: $color-border-gray;
-// $dropdown-bg: $color-white;
+$breadcrumb-divider-color: $color-dark-gray;
+$breadcrumb-active-color: $color-dark-gray;

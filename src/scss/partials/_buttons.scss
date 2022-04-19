@@ -46,28 +46,10 @@
 			darken($color-white, 5%),
 			$color-anthracite,
 			$color-anthracite,
-			$color-white,
-			lighten($color-anthracite, 35%),
-			lighten($color-anthracite, 35%)
-		);
-	}
-	&.btn-dropdown {
-		@include button-variant(
-			$color-white,
-			$color-border-gray,
-			$color-dark-gray,
-			$color-white,
-			$color-black,
-			$color-black,
 			darken($color-white, 5%),
-			$color-anthracite,
-			$color-anthracite,
-			$color-light-gray,
 			$color-border-gray,
 			lighten($color-anthracite, 35%)
 		);
-		text-align: left;
-		width: 100%;
 	}
 
 	&.disabled,

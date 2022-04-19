@@ -1,13 +1,18 @@
-@import '../../../../node_modules/@fortawesome/fontawesome-free/scss/solid';
-
-.form-select-wrapper::before {
-	display: inline-block;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	font: var(--fa-font-solid);
-	content: '\f107';
-	position: absolute;
-	right: 0.625rem;
-	top: 0.875rem;
-	font-size: 0.75rem;
+.form-select-wrapper {
+	&::before {
+		display: inline-block;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font: var(--fa-font-solid);
+		content: '\f107';
+		position: absolute;
+		right: 0.625rem;
+		top: 0.875rem;
+		font-size: 0.75rem;
+	}
+	select:focus & {
+		&::before {
+			background-color: red;
+		}
+	}
 }
