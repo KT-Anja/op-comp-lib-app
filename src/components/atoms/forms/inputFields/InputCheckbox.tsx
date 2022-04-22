@@ -6,6 +6,7 @@ interface InputCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 	label: string
 	helperText?: string
 	errorMessage?: string
+	noMarginBottom?: boolean
 	onChange?: (event: React.ChangeEvent) => void
 }
 
@@ -14,6 +15,7 @@ const InputCheckbox = ({
 	label,
 	helperText,
 	errorMessage,
+	noMarginBottom,
 	onChange,
 	...rest
 }: InputCheckboxProps) => {
@@ -24,7 +26,12 @@ const InputCheckbox = ({
 	}
 
 	return (
-		<div className="form-check mb-form-field">
+		<div
+			className={classNames('form-check', {
+				'mb-0': noMarginBottom,
+				'mb-form-field': !noMarginBottom
+			})}
+		>
 			<input
 				id={id}
 				type="checkbox"

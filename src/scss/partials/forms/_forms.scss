@@ -1,5 +1,5 @@
+// Custom form styles for onlineprinters
 // TODO: tidy up
-
 .form-text,
 .valid-feedback,
 .invalid-feedback {
@@ -64,12 +64,12 @@ select {
 	}
 }
 
-// .was-validated .form-control:invalid {
-// 	background-size: 1.25rem 1.25rem;
-// 	&:hover {
-// 		border-color: $color-error;
-// 	}
-// 	+ .form-label.hasFocus {
-// 		color: $color-error;
-// 	}
-// }
+.form-box {
+	background-color: $color-bg-gray;
+	border: 1px solid $color-border-gray;
+	border-radius: 0.25rem;
+	padding: 1.25rem;
+	.form-box-headline {
+		margin-bottom: 1.5rem;
+	}
+}

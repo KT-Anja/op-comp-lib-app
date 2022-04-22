@@ -52,6 +52,23 @@
 		);
 	}
 
+	&.btn-icon-borderless {
+		@include button-variant(
+			transparent,
+			transparent,
+			$color-anthracite,
+			transparent,
+			transparent,
+			$color-brand,
+			transparent,
+			transparent,
+			$color-brand,
+			transparent,
+			transparent,
+			lighten($color-anthracite, 35%)
+		);
+	}
+
 	&.disabled,
 	&:disabled {
 		opacity: 1;

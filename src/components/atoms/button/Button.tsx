@@ -8,14 +8,24 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
 	status?: 'success' | 'info' | 'warning' | 'danger'
 	iconOnly?: boolean
 	iconKeyName?: string
+	borderless?: boolean
 }
 
-const Button = ({ children, variant, iconKeyName, iconOnly, status, ...rest }: ButtonProps) => {
+const Button = ({
+	children,
+	variant,
+	iconKeyName,
+	iconOnly,
+	status,
+	borderless,
+	...rest
+}: ButtonProps) => {
 	return (
 		<button
 			className={classNames(`btn btn-${variant}`, {
 				'btn-icon-only': iconKeyName !== undefined && iconOnly,
-				'btn-with-icon': iconKeyName !== undefined && !iconOnly
+				'btn-with-icon': iconKeyName !== undefined && !iconOnly,
+				'btn-icon-borderless': borderless && iconKeyName !== undefined && iconOnly
 			})}
 			{...rest}
 		>

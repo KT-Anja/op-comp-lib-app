@@ -3,7 +3,6 @@ import { Button } from '../components'
 const Buttons = () => {
 	return (
 		<>
-			<h2>Buttons</h2>
 			<div className="example">
 				<h4>primary</h4>
 				<Button variant="primary">Label</Button>
@@ -75,6 +74,15 @@ const Buttons = () => {
 				<h4>icon only</h4>
 				<Button variant="default" iconOnly iconKeyName="fa-circle-arrow-right"></Button>
 				<Button variant="default" iconOnly iconKeyName="fa-circle-arrow-right" disabled></Button>
+				<h4>icon borderless</h4>
+				<Button variant="default" iconOnly iconKeyName="fa-circle-arrow-right" borderless></Button>
+				<Button
+					variant="default"
+					iconOnly
+					iconKeyName="fa-circle-arrow-right"
+					borderless
+					disabled
+				></Button>
 			</div>
 		</>
 	)

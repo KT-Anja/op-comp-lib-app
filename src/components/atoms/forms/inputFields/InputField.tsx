@@ -6,6 +6,7 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 	label: string
 	helperText?: string
 	errorMessage?: string
+	noMarginBottom?: boolean
 	onChange?: (event: React.ChangeEvent) => void
 	onFocus?: (event: React.FocusEvent) => void
 	onBlur?: (event: React.FocusEvent) => void
@@ -16,6 +17,7 @@ const InputField = ({
 	label,
 	helperText,
 	errorMessage,
+	noMarginBottom,
 	onChange,
 	onFocus,
 	onBlur,
@@ -49,7 +51,12 @@ const InputField = ({
 	}
 	return (
 		<>
-			<div className="form-field-wrapper mb-form-field">
+			<div
+				className={classNames('form-field-wrapper', {
+					'mb-0': noMarginBottom,
+					'mb-form-field': !noMarginBottom
+				})}
+			>
 				<input
 					className={classNames('form-control', {
 						'is-invalid': errorMessage

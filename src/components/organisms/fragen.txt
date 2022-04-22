@@ -1,0 +1,4 @@
+- Sticky? nein
+- Logo konfigurierbar? nein
+- Hover border absichtlich andere Farbe f19d38? --> brand
+- Bei 768 passt die Navigation nicht mehr in den Header --> 992

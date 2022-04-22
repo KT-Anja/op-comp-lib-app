@@ -1,0 +1,37 @@
+@import '../../../scss/partials/_variables.scss';
+@import '../../../../node_modules/bootstrap/scss/mixins';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.header-cta {
+	position: relative;
+	i:before {
+		font-size: 1.5625rem;
+		display: block;
+	}
+	label {
+		font-size: 0.75rem;
+		line-height: 1rem;
+		margin-top: 0.125rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&:last-of-type {
+			padding-right: 0.25rem;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		&:after {
+			content: '';
+			position: absolute;
+			border-bottom: 2px solid $color-brand;
+			height: 2px;
+			width: auto;
+			bottom: -0.125rem;
+			left: 0;
+			right: 0;
+		}
+	}
+}

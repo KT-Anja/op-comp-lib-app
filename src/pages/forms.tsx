@@ -1,6 +1,32 @@
-import { InputField, InputSelect } from "../components";
-import InputCheckbox from "../components/atoms/forms/inputFields/InputCheckbox";
+import { FormBox, InputCheckbox, InputField, InputSelect } from "../components";
+import { OptionType } from "../components/atoms/forms/inputFields/InputSelect";
 import FormButton from "../components/molecules/FormButton";
+
+const options: Array<OptionType> = [
+  {
+    value: 0,
+    label: "0%",
+  },
+  {
+    value: 50,
+    label: "50%",
+  },
+  {
+    value: 100,
+    label: "100%",
+  },
+];
+
+const optionsYesNo: Array<OptionType> = [
+  {
+    value: 0,
+    label: "Nein",
+  },
+  {
+    value: 1,
+    label: "Ja",
+  },
+];
 
 const Forms = () => {
   return (
@@ -37,9 +63,6 @@ const Forms = () => {
                 label="disabled"
                 disabled
               ></InputField>
-              <FormButton right variant="primary" type="submit">
-                Submit
-              </FormButton>
             </form>
           </div>
         </div>
@@ -69,14 +92,11 @@ const Forms = () => {
                 disabled
                 checked
               ></InputCheckbox>
-              <FormButton right variant="primary" type="submit">
-                Submit
-              </FormButton>
             </form>
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row mb-3">
         <div className="col-6">
           <div className="form-wrapper">
             <h3 className="mb-3">Invalid states</h3>
@@ -115,10 +135,6 @@ const Forms = () => {
                 label="valid"
                 helperText="allright"
               ></InputField>
-
-              <FormButton right variant="primary" type="submit">
-                Submit
-              </FormButton>
             </form>
           </div>
         </div>
@@ -161,6 +177,69 @@ const Forms = () => {
               ></InputSelect>
             </form>
           </div>
+        </div>
+      </div>
+      <div className="row mb-3">
+        <h3 className="mb-3">In Formbox</h3>
+        <div className="col-6">
+          <FormBox headline="Kundendaten">
+            <form noValidate>
+              <InputField
+                type="text"
+                id="kundennummer"
+                label="Kundennummer"
+              ></InputField>
+              <InputField
+                type="text"
+                id="ansprechpartner"
+                label="Ansprechpartner"
+              ></InputField>
+              <InputSelect
+                id="umsatzsteuer"
+                label="Umsatzsteuer gültig"
+                options={optionsYesNo}
+              ></InputSelect>
+              <InputSelect
+                id="umsatz"
+                label="Umsatzsteuer berechnen"
+                options={optionsYesNo}
+                noMarginBottom
+              ></InputSelect>
+            </form>
+          </FormBox>
+        </div>
+        <div className="col-6">
+          <FormBox headline="Auftragsdaten">
+            <form noValidate>
+              <div className="row">
+                <div className="col-6">
+                  <InputField
+                    type="text"
+                    id="reachnungsart"
+                    label="Rechnungsart"
+                  ></InputField>
+                </div>
+                <div className="col-6">
+                  <InputSelect
+                    id="rabatt"
+                    label="Rabatt"
+                    options={options}
+                  ></InputSelect>
+                </div>
+              </div>
+              <InputField
+                type="text"
+                id="referenztext"
+                label="Referenztext"
+              ></InputField>
+              <InputField
+                type="text"
+                id="produktions"
+                label="Produktionsstätte"
+              ></InputField>
+              <FormButton variant="default">Druckdateien hochladen</FormButton>
+            </form>
+          </FormBox>
         </div>
       </div>
     </>

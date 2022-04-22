@@ -1,20 +1,14 @@
-.dropdown-toggle {
-	&::after {
-		content: none;
+.navbar-collapse {
+	.dropdown-menu {
+		border-top-color: transparent;
+		box-shadow: 0px 3px 6px #00000029;
 	}
-	i {
-		position: absolute;
-		right: 0.835rem;
-		top: 0.6875rem;
-	}
-	&.btn-dropdown {
-		&:active,
-		&:focus,
-		&:active:focus {
-			box-shadow: none;
+
+	.dropdown-item {
+		&:hover,
+		&:focus {
+			// Override $link-hover-decoration (default no decoration)
+			text-decoration: underline;
 		}
 	}
-}
-.dropdown-menu {
-	width: 100%;
 }

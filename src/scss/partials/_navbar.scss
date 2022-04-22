@@ -1,0 +1,37 @@
+.navbar-expand-lg {
+	@include media-breakpoint-up(lg) {
+		padding-left: 2.375rem;
+		padding-right: 2.375rem;
+	}
+}
+
+.navbar-nav {
+	.nav-link {
+		span {
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				border-bottom: 2px solid transparent;
+				height: 2px;
+				width: auto;
+				bottom: -0.125rem;
+				left: 0;
+				right: 0;
+			}
+		}
+		&:hover {
+			span::after {
+				border-color: $color-brand;
+			}
+		}
+		&.dropdown-toggle:after {
+			border: none;
+		}
+	}
+}
+
+.navbar-toggler {
+	margin-right: 1.75rem;
+}

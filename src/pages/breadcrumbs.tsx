@@ -16,12 +16,7 @@ const Breadcrumbs = () => {
 			title: 'Link 3 Active'
 		}
 	]
-	return (
-		<>
-			<h2>Breadcrumb</h2>
-			<Breadcrumb items={breadcrumbItems}></Breadcrumb>
-		</>
-	)
+	return <Breadcrumb items={breadcrumbItems}></Breadcrumb>
 }
 
 export default Breadcrumbs

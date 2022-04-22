@@ -3,7 +3,6 @@ import { Link } from '../components'
 const Links = () => {
 	return (
 		<>
-			<h2>Links</h2>
 			<Link href="#">Ich bin ein Link</Link>
 			<br />
 			<br />
