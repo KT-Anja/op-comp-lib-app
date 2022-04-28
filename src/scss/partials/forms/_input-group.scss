@@ -1,0 +1,33 @@
+.input-group {
+	input {
+		&::placeholder {
+			/* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: $color-dark-gray;
+			opacity: 1; /* Firefox */
+		}
+		~ .btn i {
+			color: $color-dark-gray;
+
+			&:hover {
+				color: $color-black;
+			}
+		}
+		&:hover {
+			~ .btn i {
+				color: $color-black;
+			}
+
+			~ .btn {
+				border: 1px solid $color-black;
+				border-left-color: transparent;
+			}
+		}
+
+		&:focus {
+			~ .btn {
+				border: 1px solid $color-brand;
+				border-left-color: transparent;
+			}
+		}
+	}
+}

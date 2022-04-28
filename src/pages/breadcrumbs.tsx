@@ -1,22 +1,15 @@
-import { BreadcrumbItemProps } from '../components/atoms/breadcrumb/BreadcrumbItem'
-import Breadcrumb from '../components/molecules/Breadcrumb'
+import Breadcrumb from '../components/atoms/breadcrumb/Breadcrumb'
+import BreadcrumbItem from '../components/atoms/breadcrumb/BreadcrumbItem'
 
 const Breadcrumbs = () => {
-	const breadcrumbItems: Array<BreadcrumbItemProps> = [
-		{
-			url: '#',
-			title: 'Link'
-		},
-		{
-			url: '#',
-			title: 'Link 2'
-		},
-		{
-			url: '#',
-			title: 'Link 3 Active'
-		}
-	]
-	return <Breadcrumb items={breadcrumbItems}></Breadcrumb>
+	return (
+		<Breadcrumb>
+			<BreadcrumbItem title="Link" url="#"></BreadcrumbItem>
+			<BreadcrumbItem title="Link 2" url="#"></BreadcrumbItem>
+			<BreadcrumbItem title="Link 3" url="#"></BreadcrumbItem>
+			<BreadcrumbItem title="Link active" url="#" active></BreadcrumbItem>
+		</Breadcrumb>
+	)
 }
 
 export default Breadcrumbs

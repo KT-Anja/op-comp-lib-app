@@ -1,11 +1,16 @@
 interface FormBoxProps {
 	headline: string
 	children: React.ReactNode
+	inModal?: boolean
 }
 
-const FormBox = ({ headline, children }: FormBoxProps) => (
+const FormBox = ({ headline, inModal, children }: FormBoxProps) => (
 	<div className="form-box">
-		<h3 className="form-box-headline">{headline}</h3>
+		{inModal ? (
+			<h4 className="form-box-headline">{headline}</h4>
+		) : (
+			<h3 className="form-box-headline">{headline}</h3>
+		)}
 		{children}
 	</div>
 )

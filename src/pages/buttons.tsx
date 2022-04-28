@@ -83,6 +83,10 @@ const Buttons = () => {
 					borderless
 					disabled
 				></Button>
+				<h4>Button with Badge</h4>
+				<Button variant="default" badgeValue={5}>
+					Uploaded Files
+				</Button>
 			</div>
 		</>
 	)

@@ -9,6 +9,7 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
 	iconOnly?: boolean
 	iconKeyName?: string
 	borderless?: boolean
+	badgeValue?: number
 }
 
 const Button = ({
@@ -18,6 +19,7 @@ const Button = ({
 	iconOnly,
 	status,
 	borderless,
+	badgeValue,
 	...rest
 }: ButtonProps) => {
 	return (
@@ -31,6 +33,11 @@ const Button = ({
 		>
 			{iconKeyName && <Icon keyName={iconKeyName} status={status} />}
 			{children}
+			{badgeValue && (
+				<>
+					<span className="badge bg-primary text-black ms-2">{badgeValue}</span>
+				</>
+			)}
 		</button>
 	)
 }

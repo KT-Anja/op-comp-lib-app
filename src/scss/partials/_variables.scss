@@ -58,6 +58,21 @@ $spacers: map-merge(
 	$map2: $custom-spacer
 );
 
+// Position
+$position-values: (
+	0: 0,
+	50: 50%,
+	100: 100%
+) !default;
+
+$custom-positions: (
+	5rem: $spacer * 5
+);
+$position-values: map-merge(
+	$map1: $position-values,
+	$map2: $custom-positions
+);
+
 // Body
 //
 //# Settings for the '<body>' element
@@ -163,6 +178,7 @@ $form-validation-states: (
 $navbar-nav-link-padding-x: 0.75rem;
 $navbar-toggler-padding-x: 0.25rem;
 // $navbar-brand-margin-end: 3.125rem;
+$navbar-brand-padding-y: 0;
 $navbar-brand-margin-end: 2.375rem;
 $navbar-dark-color: $color-white;
 $navbar-dark-hover-color: $color-white;
@@ -177,9 +193,26 @@ $dropdown-dark-box-shadow: 0px 3px 6px #00000029;
 $dropdown-border-color: $color-light-gray;
 
 $dropdown-link-hover-bg: transparent;
+$dropdown-link-active-color: none;
+$dropdown-link-active-bg: transparent;
+
+$badge-font-size: $font-size-base;
+$badge-font-weight: normal;
+$badge-padding-y: 0.125rem;
+$badge-padding-x: 0.5rem;
+
+// Modals
+$modal-header-padding-y: 0.75rem;
+$modal-inner-padding: 0.75rem;
+$modal-content-border-width: 0;
 
 // Breadcrumbs
 $breadcrumb-font-size: 0.875rem;
 $breadcrumb-item-padding-x: 0.25rem;
 $breadcrumb-divider-color: $color-dark-gray;
 $breadcrumb-active-color: $color-dark-gray;
+
+// Close
+$btn-close-opacity: 0.5;
+$btn-close-color: $color-black;
+$btn-close-hover-opacity: 1;

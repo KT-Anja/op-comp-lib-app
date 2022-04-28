@@ -27,3 +27,8 @@
 		background-color: lighten($color-warning, 40);
 	}
 }
+
+// custom class
+.alert-container {
+	z-index: $zindex-fixed;
+}
