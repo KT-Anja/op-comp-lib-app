@@ -3,13 +3,7 @@ import { Alert } from '../components'
 const Alerts = () => {
 	return (
 		<>
-			<Alert
-				status="success"
-				message="Success! Das war erfolgreich"
-				icon
-				autoClose
-				positionFixed
-			></Alert>
+			<Alert status="success" message="Success! Das war erfolgreich" icon></Alert>
 			<Alert status="info" message="Eine Information"></Alert>
 			<Alert status="info" message="Eine Information mit Icon" icon></Alert>
 			<Alert status="warning" message="Das hier ist eine Warnung!"></Alert>

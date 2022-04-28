@@ -1,4 +1,5 @@
-// Variables
+// Variables (override bootstrap variables.scss file
+// Custom Variables are marked by comment
 //
 // Color system
 //
@@ -142,6 +143,8 @@ $input-focus-box-shadow: none;
 
 // Check
 // $form-check-input-width: 1.5em; //switch
+$form-check-label-cursor: pointer;
+$form-check-input-active-filter: none;
 $form-check-input-border: 1px solid $color-anthracite;
 $form-check-input-border-radius: 0.1875em;
 $form-check-input-focus-border: $color-anthracite;
@@ -154,6 +157,11 @@ $form-switch-color: $color-black;
 $form-switch-width: 2.4375em;
 $form-switch-focus-color: $color-anthracite;
 $form-switch-checked-color: $color-white;
+$form-switch-focus-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$color-black}'/></svg>") !default;
+
+//custom variable
+$form-switch-disabled-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$color-border-gray}'/></svg>") !default;
+//
 
 //Select
 $form-select-color: $color-black;

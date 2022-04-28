@@ -42,7 +42,6 @@ const Header = ({ logo, logoAlt, showLanguageSelector, showSearch }: HeaderProps
 					{showSearch && (
 						<div className="order-3 order-lg-4">
 							<SearchInput
-								id="123"
 								onSubmit={(event) => {
 									console.log(event)
 								}}
@@ -50,7 +49,6 @@ const Header = ({ logo, logoAlt, showLanguageSelector, showSearch }: HeaderProps
 						</div>
 					)}
 					<div className="cta-wrapper d-flex flex-row order-4 order-lg-5">
-						{/* TODO: CTAs fix oder configurable */}
 						{showLanguageSelector && <LanguageSelector />}
 						<HeaderCTA label="Abmelden" iconKeyName="fa-arrow-right-from-bracket"></HeaderCTA>
 					</div>

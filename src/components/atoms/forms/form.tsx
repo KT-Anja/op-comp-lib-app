@@ -1,7 +1,7 @@
 import { FormHTMLAttributes } from 'react'
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
-	background?: boolean
+	background: boolean
 }
 
 const Form = ({ ...rest }: FormProps) => {

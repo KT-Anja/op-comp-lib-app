@@ -1,6 +1,16 @@
-.form-switch {
-	.form-check-input {
-		height: 1.5em;
+//
+// Check/radio
+//
+.form-check-input {
+	&:hover {
+		cursor: pointer;
+	}
+	&:disabled {
+		background-color: $color-border-gray;
+		border-color: $color-border-gray;
+		+ .form-check-label {
+			color: lighten($color-anthracite, 35%);
+		}
 	}
 }
 
@@ -8,12 +18,17 @@
 	margin-top: 0.0625rem;
 }
 
-.form-check-input {
-	&:disabled {
-		background-color: $color-border-gray;
-		border-color: $color-border-gray;
-		+ .form-check-label {
-			color: lighten($color-anthracite, 35%);
+//
+// Switch
+//
+.form-switch {
+	.form-check-input {
+		height: 1.5em;
+		margin-top: 0;
+		&[disabled],
+		&:disabled {
+			background-image: escape-svg($form-switch-disabled-bg-image);
+			background-color: $color-white;
 		}
 	}
 }
