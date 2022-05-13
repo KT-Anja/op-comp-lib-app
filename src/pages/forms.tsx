@@ -1,4 +1,5 @@
 import { FormBox, InputField, InputSelect } from '../components'
+import Form from '../components/atoms/forms/form'
 import InputCheckbox from '../components/atoms/forms/inputFields/InputCheckbox'
 import { OptionType } from '../components/atoms/forms/inputFields/InputSelect'
 import FormButton from '../components/molecules/FormButton'
@@ -7,6 +8,30 @@ const options: Array<OptionType> = [
 	{
 		value: 0,
 		label: '0%'
+	},
+	{
+		value: 5,
+		label: '5%'
+	},
+	{
+		value: 10,
+		label: '10%'
+	},
+	{
+		value: 15,
+		label: '15%'
+	},
+	{
+		value: 20,
+		label: '20%'
+	},
+	{
+		value: 30,
+		label: '30%'
+	},
+	{
+		value: 40,
+		label: '40%'
 	},
 	{
 		value: 50,
@@ -20,11 +45,11 @@ const options: Array<OptionType> = [
 
 const optionsYesNo: Array<OptionType> = [
 	{
-		value: 0,
+		value: '0',
 		label: 'Nein'
 	},
 	{
-		value: 1,
+		value: '1',
 		label: 'Ja'
 	}
 ]
@@ -100,6 +125,19 @@ const Forms = () => {
 								label="valid"
 								helperText="allright"
 							></InputField>
+							<InputSelect
+								id="selectError"
+								label="Select"
+								options={[]}
+								errorMessage="Bitte wählen Sie einen Wert aus"
+							></InputSelect>
+							<InputSelect
+								id="select3"
+								label="Select"
+								helperText="Hier ist ein Hinweis"
+								options={options}
+								errorMessage="Bitte wählen Sie einen Wert aus"
+							></InputSelect>
 						</form>
 					</div>
 				</div>
@@ -108,37 +146,15 @@ const Forms = () => {
 						<h3 className="mb-3">Select</h3>
 						<form noValidate>
 							<InputSelect
-								id="select1"
-								label="Select"
-								options={[
-									{ value: 'option1', label: 'Option 1' },
-									{ value: 'option2', label: 'Option 2' },
-									{ value: 'option3', label: 'Option 3' },
-									{ value: 'option4', label: 'Option 4' }
-								]}
+								id="umsatzsteuer"
+								label="Umsatzsteuer gültig"
+								options={optionsYesNo}
 							></InputSelect>
 							<InputSelect
-								id="select2"
-								label="Select"
-								options={[
-									{ value: 'option1', label: 'Option 1' },
-									{ value: 'option2', label: 'Option 2' },
-									{ value: 'option3', label: 'Option 3' },
-									{ value: 'option4', label: 'Option 4' }
-								]}
-								disabled
-							></InputSelect>
-							<InputSelect
-								id="select3"
-								label="Select"
-								options={[
-									{ value: 'option1', label: 'Option 1' },
-									{ value: 'option2', label: 'Option 2' },
-									{ value: 'option3', label: 'Option 3' },
-									{ value: 'option4', label: 'Option 4' }
-								]}
-								required
-								errorMessage="Bitte auswählen"
+								id="umsatz"
+								label="Umsatzsteuer berechnen"
+								options={optionsYesNo}
+								noMarginBottom
 							></InputSelect>
 						</form>
 					</div>
@@ -212,7 +228,7 @@ const Forms = () => {
 				</div>
 				<div className="col-6">
 					<FormBox headline="Auftragsdaten">
-						<form noValidate>
+						<Form noValidate>
 							<div className="row">
 								<div className="col-6">
 									<InputField type="text" id="reachnungsart" label="Rechnungsart"></InputField>
@@ -224,7 +240,7 @@ const Forms = () => {
 							<InputField type="text" id="referenztext" label="Referenztext"></InputField>
 							<InputField type="text" id="produktions" label="Produktionsstätte"></InputField>
 							<FormButton variant="default">Druckdateien hochladen</FormButton>
-						</form>
+						</Form>
 					</FormBox>
 				</div>
 			</div>

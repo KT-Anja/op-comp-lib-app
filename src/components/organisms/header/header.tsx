@@ -7,12 +7,19 @@ import NavigationMain from '../navigation/navigation-main'
 interface HeaderProps {
 	logo?: string
 	logoAlt?: string
+	logoWidth?: number
 	showLanguageSelector?: boolean
 	showSearch?: boolean
 }
 
 // TODO: dynamic order classes depending on showSearch
-const Header = ({ logo, logoAlt, showLanguageSelector, showSearch }: HeaderProps) => {
+const Header = ({
+	logo,
+	logoAlt,
+	logoWidth = 169,
+	showLanguageSelector,
+	showSearch
+}: HeaderProps) => {
 	return (
 		<header>
 			<nav id="mainNavigation" className="navbar navbar-expand-lg navbar-dark bg-black">
@@ -31,9 +38,9 @@ const Header = ({ logo, logoAlt, showLanguageSelector, showSearch }: HeaderProps
 					<a className="navbar-brand flex-grow-1 flex-lg-grow-0 order-2" href="#">
 						{/* TODO: should logo be configurable? is width necessary if logo has correct size */}
 						{logo ? (
-							<img src={logo} alt={logoAlt} width="169" />
+							<img src={logo} alt={logoAlt} width={logoWidth} />
 						) : (
-							<img src="op_logo.png" alt="Onlineprinters" width="140" />
+							<img src="op_logo.png" alt="Onlineprinters" width={logoWidth} />
 						)}
 					</a>
 					<div className="collapse navbar-collapse order-5 order-lg-3" id="navbarNav">

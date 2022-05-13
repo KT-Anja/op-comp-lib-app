@@ -24,6 +24,12 @@
 @import 'bootstrap/scss/breadcrumb';
 @import 'bootstrap/scss/dropdown';
 @import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/pagination';
+@import 'bootstrap/scss/tooltip';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/progress';
+
 @import 'bootstrap/scss/badge';
 @import 'bootstrap/scss/close';
 @import 'bootstrap/scss/modal';
@@ -41,3 +47,5 @@
 @import 'partials/breadcrumb';
 @import 'partials/navbar';
 @import 'partials/dropdown';
+@import 'partials/card';
+@import 'select.scss';

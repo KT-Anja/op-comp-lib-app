@@ -29,6 +29,18 @@
 }
 
 // custom class
-.alert-container {
+.alert-container.position-fixed {
 	z-index: $zindex-fixed;
+	top: 5rem;
+	bottom: 5rem;
+	.row {
+		display: flex;
+		height: 100%;
+	}
+	&.align-top .row {
+		align-items: start;
+	}
+	&.align-bottom .row {
+		align-items: end;
+	}
 }
