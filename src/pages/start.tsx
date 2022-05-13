@@ -32,16 +32,14 @@ const Start = () => {
 								<Icons />
 								<h2 className="mt-5 mb-4 text-primary">Breadcrumbs</h2>
 								<Breadcrumbs />
-								<h2 className="mt-5 mb-4 text-primary">Pagination</h2>
-								<Pagination />
-								<h2 className="mt-5 mb-4 text-primary">Modals</h2>
+								<h2 className="mt-5 mb-4 text-primary">Modal</h2>
 								<Modals />
 								<h2 className="mt-5 mb-4 text-primary">Cards</h2>
 								<Cards />
+								<h2 className="mt-5 mb-4 text-primary">Pagination</h2>
+								<Pagination />
 								<h2 className="mt-5 mb-4 text-primary">Progress</h2>
 								<Progress />
-								{/* <h2 className="mt-5 mb-4 text-primary">Spinner</h2> */}
-								{/* <Spinner /> */}
 							</div>
 						</div>
 					</section>

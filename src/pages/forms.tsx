@@ -207,7 +207,7 @@ const Forms = () => {
 			</div>
 			<div className="row mb-3">
 				<h3 className="mb-3">In Formbox</h3>
-				<div className="col-6">
+				<div className="col-md-6">
 					<FormBox headline="Kundendaten">
 						<form noValidate>
 							<InputField type="text" id="kundennummer" label="Kundennummer"></InputField>
@@ -226,14 +226,14 @@ const Forms = () => {
 						</form>
 					</FormBox>
 				</div>
-				<div className="col-6">
+				<div className="col-md-6">
 					<FormBox headline="Auftragsdaten">
 						<Form noValidate>
-							<div className="row">
-								<div className="col-6">
+							<div className="row g-1">
+								<div className="col-md-6">
 									<InputField type="text" id="reachnungsart" label="Rechnungsart"></InputField>
 								</div>
-								<div className="col-6">
+								<div className="col-md-6">
 									<InputSelect id="rabatt" label="Rabatt" options={options}></InputSelect>
 								</div>
 							</div>
