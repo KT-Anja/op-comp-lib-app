@@ -1,3 +1,4 @@
+@import '../variables';
 //
 // Check/radio
 //
@@ -28,7 +29,11 @@
 		&[disabled],
 		&:disabled {
 			background-image: escape-svg($form-switch-disabled-bg-image);
-			background-color: $color-white;
+			background-color: $color-border-gray;
+			&:not(:checked) {
+				background-image: escape-svg($form-switch-disabled-checked-bg-image);
+				background-color: $color-white;
+			}
 		}
 	}
 }

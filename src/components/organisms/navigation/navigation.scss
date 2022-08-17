@@ -1,0 +1,45 @@
+@import '../../../scss/partials/_variables.scss';
+
+.nav-tablet {
+	position: fixed;
+	left: 0;
+	width: $nav-tablet-width;
+	max-width: 100vw;
+	height: calc(100vh - $header-height);
+	top: $header-height;
+	z-index: 2;
+	transition: transform 150ms ease-in;
+	will-change: transform;
+}
+
+.nav-tablet-backdrop {
+	position: fixed;
+	inset: 0;
+	top: 59px;
+	z-index: 1;
+	background: $color-black;
+	transition: opacity 150ms ease-in;
+	will-change: opacity;
+}
+
+.nav-tablet-list {
+	transition: left 150ms ease;
+	height: 100vh;
+	will-change: transform;
+	li {
+		height: 2.8125rem;
+		cursor: pointer;
+		&:not(.nav-tablet-subtitle):hover {
+			background: $color-light-gray;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.nav-tablet-subtitle {
+	span {
+		margin-left: 1rem;
+	}
+}

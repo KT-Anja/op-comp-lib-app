@@ -160,7 +160,8 @@ $form-switch-checked-color: $color-white;
 $form-switch-focus-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$color-black}'/></svg>") !default;
 
 //custom variable
-$form-switch-disabled-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$color-border-gray}'/></svg>") !default;
+$form-switch-disabled-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$color-white}'/></svg>") !default;
+$form-switch-disabled-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$color-border-gray}'/></svg>") !default;
 //
 
 //Select
@@ -172,7 +173,8 @@ $form-feedback-valid-color: $color-border-gray;
 $form-feedback-invalid-color: $color-error;
 
 $form-feedback-icon-valid: none;
-$form-feedback-icon-invalid: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="#{$form-feedback-invalid-color}" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>');
+// $form-feedback-icon-invalid: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="#{$form-feedback-invalid-color}" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>');
+$form-feedback-icon-invalid: none;
 
 $form-validation-states: (
 	'invalid': (
@@ -190,6 +192,7 @@ $navbar-brand-padding-y: 0;
 $navbar-brand-margin-end: 2.375rem;
 $navbar-dark-color: $color-white;
 $navbar-dark-hover-color: $color-white;
+$nav-tablet-width: 23.438rem;
 
 // Dropdowns
 $dropdown-spacer: 0.5rem;
@@ -213,10 +216,12 @@ $badge-padding-x: 0.5rem;
 $modal-header-padding-y: 0.75rem;
 $modal-inner-padding: 1rem;
 $modal-content-border-width: 0;
-$pagination-color: $color-anthracite;
-$pagination-hover-bg: $color-light-gray;
-$pagination-hover-border-color: $color-anthracite;
-$pagination-active-bg: $color-anthracite;
+
+// Tooltips
+$tooltip-bg: $color-anthracite;
+$tooltip-padding-y: 0.625rem;
+$tooltip-padding-x: 0.625rem;
+$tooltip-opacity: 1;
 
 // Cards
 $card-spacer-y: 1.25rem;
@@ -228,11 +233,8 @@ $card-bg: $color-bg-gray;
 //custom variable
 $card-img-max-height: 12.5rem;
 
-// Tooltips
-$tooltip-padding-x: 0.625rem;
-$tooltip-padding-y: 0.625rem;
-
-// Spinners
+// Popovers
+// $popover-border-color: $color-error;
 
 // Breadcrumbs
 $breadcrumb-font-size: 0.875rem;
@@ -244,3 +246,6 @@ $breadcrumb-active-color: $color-dark-gray;
 $btn-close-opacity: 0.5;
 $btn-close-color: $color-black;
 $btn-close-hover-opacity: 1;
+
+// Header
+$header-height: 3.688rem;

@@ -1,54 +1,88 @@
 {
-  "name": "op-component-library-react",
-  "private": true,
-  "version": "0.0.1",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/op-comp-lib.umd.js",
-  "module": "./dist/op-comp-lib.es.js",
-  "typings": "./dist/",
-  "exports": {
-    ".": {
-      "import": "./dist/op-comp-lib.es.js",
-      "require": "./dist/op-comp-lib.umd.js"
-    }
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "build-html": "tsc && vite build -c vite-html.config.ts",
-    "preview": "vite preview",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "resolutions": {
-    "@types/react": "^17.0.45"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.1.1",
-    "@types/bootstrap": "^5.1.10",
-    "@types/node": "^17.0.23",
-    "@types/react": "17.0.45",
-    "@types/react-dom": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "@vitejs/plugin-react": "^1.0.7",
-    "bootstrap": "^5.1.3",
-    "classnames": "^2.3.1",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.29.4",
-    "prettier": "^2.6.1",
-    "react-router-dom": "^6.2.2",
-    "react-select": "^5.3.1",
-    "sass": "^1.49.9",
-    "typescript": "^4.5.4",
-    "vite": "^2.8.0"
-  }
+	"name": "@kernpunkt/ui-kit",
+	"files": [
+		"dist"
+	],
+	"license": "MIT",
+	"version": "1.0.9",
+	"main": "./dist/ui-kit.umd.js",
+	"module": "./dist/ui-kit.es.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/ui-kit.es.js",
+			"require": "./dist/ui-kit.umd.js"
+		}
+	},
+	"scripts": {
+		"semantic-release": "semantic-release",
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"build-html": "tsc && vite build -c vite-html.config.ts",
+		"preview": "vite preview",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook",
+		"test-storybook": "test-storybook --verbose --stories-json"
+	},
+	"dependencies": {
+		"devextreme": "^22.1.4",
+		"devextreme-react": "^22.1.4",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.9",
+		"@fortawesome/fontawesome-free": "^6.1.1",
+		"@popperjs/core": "^2.11.5",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/gitlab": "^9.3.2",
+		"@semantic-release/npm": "^9.0.1",
+		"@storybook/addon-actions": "^6.5.9",
+		"@storybook/addon-essentials": "^6.5.9",
+		"@storybook/addon-interactions": "^6.5.9",
+		"@storybook/addon-links": "^6.5.9",
+		"@storybook/builder-vite": "^0.2.0",
+		"@storybook/jest": "^0.0.10",
+		"@storybook/react": "^6.5.9",
+		"@storybook/test-runner": "^0.5.0",
+		"@storybook/testing-library": "^0.0.13",
+		"@types/bootstrap": "^5.1.10",
+		"@types/node": "^17.0.23",
+		"@types/react": "^18.0.15",
+		"@types/react-dom": "^18.0.6",
+		"@typescript-eslint/eslint-plugin": "^5.17.0",
+		"@typescript-eslint/parser": "^5.17.0",
+		"@vitejs/plugin-react": "^1.0.7",
+		"babel-loader": "^8.2.5",
+		"bootstrap": "^5.1.3",
+		"chromatic": "^6.7.0",
+		"classnames": "^2.3.1",
+		"eslint": "^8.12.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-react": "^7.29.4",
+		"eslint-plugin-storybook": "^0.6.1",
+		"jest": "27",
+		"prettier": "^2.6.1",
+		"react-router-dom": "^6.2.2",
+		"react-select": "^5.3.1",
+		"sass": "^1.49.9",
+		"semantic-release": "^19.0.3",
+		"typescript": "^4.5.4",
+		"vite": "^3.0.1",
+		"vite-plugin-dts": "^1.3.1"
+	},
+	"publishConfig": {
+		"access": "public",
+		"@kernpunkt:registry": "https://gitlab.onlineprinters.io/api/v4/projects/178/packages/npm/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.onlineprinters.io/kernpunkt/ui-kit.git"
+	}
 }

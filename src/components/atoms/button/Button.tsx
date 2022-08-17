@@ -1,9 +1,9 @@
 import classNames from 'classnames'
-import { ButtonHTMLAttributes, ReactText } from 'react'
+import React, { ButtonHTMLAttributes, ReactText } from 'react'
 import Icon from '../icon/Icon'
 
 export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
-	variant: 'primary' | 'secondary' | 'default'
+	variant?: 'primary' | 'secondary' | 'default'
 	children?: ReactText
 	status?: 'success' | 'info' | 'warning' | 'danger'
 	iconOnly?: boolean
@@ -12,18 +12,20 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
 	badgeValue?: number
 }
 
-const Button = ({
-	children,
-	variant,
-	iconKeyName,
-	iconOnly,
-	status,
-	borderless,
-	badgeValue,
-	...rest
-}: ButtonProps) => {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+	const {
+		children,
+		variant = 'default',
+		iconKeyName,
+		iconOnly,
+		status,
+		borderless,
+		badgeValue,
+		...rest
+	} = props
 	return (
 		<button
+			ref={ref}
 			className={classNames(`btn btn-${variant}`, {
 				'btn-icon-only': iconKeyName !== undefined && iconOnly,
 				'btn-with-icon': iconKeyName !== undefined && !iconOnly,
@@ -40,6 +42,8 @@ const Button = ({
 			)}
 		</button>
 	)
-}
+})
+
+Button.displayName = 'Button'
 
 export default Button

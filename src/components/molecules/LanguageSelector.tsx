@@ -3,7 +3,7 @@ import MenuItem from '../atoms/menu/MenuItem'
 import HeaderCTA from './headerCTA/HeaderCTA'
 
 const LanguageMenu = () => (
-	<Menu id="languageSelector">
+	<Menu id="languageSelector" alignEnd>
 		<MenuItem link="#">Deutsch | de</MenuItem>
 		<MenuItem link="#">Englisch | en</MenuItem>
 		<MenuItem link="#">Spanisch | es</MenuItem>

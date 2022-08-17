@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { FocusEvent, useState } from 'react'
+import { FocusEvent, useRef, useState } from 'react'
 import Select, {
 	components,
 	ControlProps,
@@ -7,6 +7,8 @@ import Select, {
 	OptionProps,
 	SingleValue
 } from 'react-select'
+import Icon from '../../icon/Icon'
+import Popover from '../../popover/Popover'
 // import './select.scss'
 import { getCustomStyles, getCustomTheme } from './selectCustomStyles'
 
@@ -24,6 +26,7 @@ interface InputSelectProps {
 	options: OptionType[]
 	helperText?: string
 	errorMessage?: string
+	errorTooltip?: string
 	noMarginBottom?: boolean
 	// onChange?: (event: React.ChangeEvent<Element>) => void
 	onChange?: (value: SelectChangeValue) => void
@@ -39,6 +42,7 @@ const InputSelect = ({
 	options,
 	helperText,
 	errorMessage,
+	errorTooltip,
 	noMarginBottom,
 	onChange,
 	onFocus,
@@ -48,6 +52,7 @@ const InputSelect = ({
 	const [value, setValue] = useState<SelectChangeValue>(null)
 	const [isFocus, setIsFocus] = useState(false)
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const errorTooltipRef = useRef(null)
 
 	const handleOnChange = (value: SelectChangeValue) => {
 		setValue(value)
@@ -112,7 +117,7 @@ const InputSelect = ({
 					// id={id}
 					inputId={id}
 					className={classNames({
-						'is-invalid': errorMessage
+						'is-invalid': errorMessage || errorTooltip
 					})}
 					options={options}
 					components={{ Option: CustomOption, Control: CustomControl }}
@@ -138,6 +143,13 @@ const InputSelect = ({
 			>
 				{label}
 			</label>
+			{errorTooltip && (
+				<span className="invalid-tooltip-indicator invalid-select">
+					<Popover content={errorTooltip} classNames="invalid" targetRef={errorTooltipRef}>
+						<Icon ref={errorTooltipRef} keyName="fa-circle-info" />
+					</Popover>
+				</span>
+			)}
 			{helperText && <div className="form-text">{helperText}</div>}
 			{errorMessage && <div className="invalid-feedback">{errorMessage}</div>}
 		</div>

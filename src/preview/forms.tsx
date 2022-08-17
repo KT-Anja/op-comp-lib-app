@@ -96,53 +96,6 @@ const Forms = () => {
 			<div className="row mb-3">
 				<div className="col-6">
 					<div className="form-wrapper">
-						<h3 className="mb-3">Invalid states</h3>
-						<form noValidate>
-							<InputCheckbox
-								id="checkbox_G"
-								label="Invalid checkbox"
-								required
-								errorMessage="Required"
-							></InputCheckbox>
-							<InputField
-								type="text"
-								id="defaultInvalid"
-								label="invalid"
-								errorMessage="Sample Error Message"
-								required
-							></InputField>
-							<InputField type="text" id="defaultInvalid2" label="valid"></InputField>
-							<InputCheckbox
-								id="checkbox_H"
-								label="Invalid checkbox"
-								required
-								errorMessage="Required"
-							></InputCheckbox>
-							<InputCheckbox id="checkbox_I" label="Valid checkbox"></InputCheckbox>
-							<InputField
-								type="text"
-								id="defaultInvalid3"
-								label="valid"
-								helperText="allright"
-							></InputField>
-							<InputSelect
-								id="selectError"
-								label="Select"
-								options={[]}
-								errorMessage="Bitte wählen Sie einen Wert aus"
-							></InputSelect>
-							<InputSelect
-								id="select3"
-								label="Select"
-								helperText="Hier ist ein Hinweis"
-								options={options}
-								errorMessage="Bitte wählen Sie einen Wert aus"
-							></InputSelect>
-						</form>
-					</div>
-				</div>
-				<div className="col-6">
-					<div className="form-wrapper">
 						<h3 className="mb-3">Select</h3>
 						<form noValidate>
 							<InputSelect
@@ -155,6 +108,54 @@ const Forms = () => {
 								label="Umsatzsteuer berechnen"
 								options={optionsYesNo}
 								noMarginBottom
+							></InputSelect>
+						</form>
+					</div>
+				</div>
+				<div className="col-6">
+					<div className="form-wrapper">
+						<h3 className="mb-3">Invalid states</h3>
+						<form noValidate>
+							<InputField
+								type="text"
+								id="defaultInvalidMessage"
+								label="Invalid field with error mesage"
+								errorMessage="Sample Error Message"
+								// required
+							></InputField>
+							<InputField
+								type="text"
+								id="defaultInvalidTooltip"
+								label="Invalid field with error tooltip"
+								required
+								errorTooltip={`<ul><li>Min 8 Zeichen</li><li>Min 1 Zahl</li><li>Min 1 Sonderzeichen</li></ul>`}
+							></InputField>
+							<InputField
+								type="text"
+								id="defaultInvalidMessageAndHelper"
+								label="Invalid field with error mesage"
+								errorMessage="Sample Error Message"
+								helperText="test"
+								required
+							></InputField>
+							<InputCheckbox
+								id="checkbox_H"
+								label="Invalid checkbox"
+								required
+								errorMessage="Required"
+							></InputCheckbox>
+							<InputSelect
+								id="selectError"
+								label="Select"
+								options={[]}
+								errorMessage="Bitte wählen Sie einen Wert aus"
+							></InputSelect>
+							<InputSelect
+								id="select3"
+								label="Select"
+								helperText="Hier ist ein Hinweis"
+								options={options}
+								errorTooltip={`<ul><li>Min 8 Zeichen</li><li>Min 1 Zahl</li><li>Min 1 Sonderzeichen</li></ul>`}
 							></InputSelect>
 						</form>
 					</div>

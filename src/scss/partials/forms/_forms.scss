@@ -42,6 +42,19 @@
 			color: $color-brand;
 		}
 	}
+	.invalid-tooltip-indicator {
+		position: absolute;
+		right: 0.625rem;
+		top: 0.5625rem;
+		color: $color-error;
+		cursor: pointer;
+		i {
+			font-size: 1.25rem;
+		}
+		&.invalid-select {
+			right: 1.875rem;
+		}
+	}
 }
 
 .form-select:disabled {

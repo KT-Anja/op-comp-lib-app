@@ -1,10 +1,15 @@
-.navbar-expand-lg {
-	@include media-breakpoint-up(lg) {
-		padding-left: 2.375rem;
-		padding-right: 2.375rem;
+// Navbar
+.navbar {
+	z-index: 3;
+	&.navbar-expand-lg {
+		@include media-breakpoint-up(lg) {
+			padding-left: 2.375rem;
+			padding-right: 2.375rem;
+		}
 	}
 }
 
+// Navbar nav
 .navbar-nav {
 	.nav-link {
 		span {
@@ -22,6 +27,9 @@
 			}
 		}
 		&:hover {
+			& + .dropdown-menu {
+				display: block;
+			}
 			span::after {
 				border-color: $color-brand;
 			}
@@ -30,8 +38,30 @@
 			border: none;
 		}
 	}
+
+	.nav-item {
+		.dropdown-menu {
+			display: none;
+			border: none;
+			margin: 0;
+			// top: 1px;
+			padding-top: calc(2 * $dropdown-spacer);
+			background: $color-white;
+			background: linear-gradient(
+				180deg,
+				$color-black 0%,
+				$color-black calc(1px + $dropdown-spacer),
+				$color-white calc(1px + $dropdown-spacer),
+				$color-white 100%
+			);
+			&:hover {
+				display: block;
+			}
+		}
+	}
 }
 
+// Button for toggling the navbar when in its collapsed state
 .navbar-toggler {
 	margin-right: 1.75rem;
 }

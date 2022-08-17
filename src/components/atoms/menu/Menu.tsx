@@ -1,13 +1,21 @@
+import classNames from 'classnames'
 import React, { ReactNode } from 'react'
 
 export interface MenuProps {
 	id: string
-	children?: Array<ReactNode>
+	children?: ReactNode
+	alignEnd?: boolean
 }
 
-const Menu = ({ id, children }: MenuProps) => {
+const Menu = ({ id, children, alignEnd }: MenuProps) => {
 	return (
-		<ul id={id} className="dropdown-menu dropdown-menu-end" aria-labelledby={id}>
+		<ul
+			id={id}
+			className={classNames('dropdown-menu', {
+				'dropdown-menu-end': alignEnd
+			})}
+			aria-labelledby={id}
+		>
 			{children}
 		</ul>
 	)

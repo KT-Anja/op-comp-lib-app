@@ -1,0 +1,35 @@
+.popover {
+	&.invalid {
+		border: 1px solid $color-error;
+		&.bs-popover-top {
+			> .popover-arrow::before {
+				border-top-color: $color-error;
+			}
+		}
+		&.bs-popover-end {
+			> .popover-arrow::before {
+				border-right-color: $color-error;
+			}
+		}
+		&.bs-popover-bottom {
+			> .popover-arrow::before {
+				border-bottom-color: $color-error;
+			}
+		}
+		&.bs-popover-start {
+			> .popover-arrow::before {
+				border-left-color: $color-error;
+			}
+		}
+	}
+	.popover-body {
+		ul {
+			padding-left: 1rem;
+			margin-bottom: 0;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

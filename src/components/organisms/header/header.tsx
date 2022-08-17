@@ -1,8 +1,9 @@
-import sampleNavItems from '../../../data/data'
+import { useState } from 'react'
+import sampleNavItems from '../../../data/navigation_items'
 import HeaderCTA from '../../molecules/headerCTA/HeaderCTA'
 import LanguageSelector from '../../molecules/LanguageSelector'
 import SearchInput from '../../molecules/SearchInput'
-import NavigationMain from '../navigation/navigation-main'
+import Navigation from '../navigation/Navigation'
 
 interface HeaderProps {
 	logo?: string
@@ -20,32 +21,33 @@ const Header = ({
 	showLanguageSelector,
 	showSearch
 }: HeaderProps) => {
+	const [openTabletNav, setOpenTabletNav] = useState(false)
+
 	return (
 		<header>
-			<nav id="mainNavigation" className="navbar navbar-expand-lg navbar-dark bg-black">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-black position-fixed top-0 start-0 end-0">
 				<div className="container-fluid">
 					<button
 						className="navbar-toggler order-1"
 						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarNav"
-						aria-controls="navbarNav"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
+						aria-label="toggle tablet navigation"
+						onClick={() => setOpenTabletNav((s) => !s)}
+						onTouchStart={() => setOpenTabletNav((s) => !s)}
 					>
-						<span className="navbar-toggler-icon"></span>
+						<i className={`fa-solid fa-lg ${openTabletNav ? 'fa-xmark' : 'fa-bars'}`}></i>
 					</button>
 					<a className="navbar-brand flex-grow-1 flex-lg-grow-0 order-2" href="#">
-						{/* TODO: should logo be configurable? is width necessary if logo has correct size */}
 						{logo ? (
 							<img src={logo} alt={logoAlt} width={logoWidth} />
 						) : (
 							<img src="op_logo.png" alt="Onlineprinters" width={logoWidth} />
 						)}
 					</a>
-					<div className="collapse navbar-collapse order-5 order-lg-3" id="navbarNav">
-						<NavigationMain items={sampleNavItems}></NavigationMain>
-					</div>
+					<Navigation
+						items={sampleNavItems}
+						isOpenTabletNav={openTabletNav}
+						closeTabletNav={() => setOpenTabletNav(false)}
+					/>
 					{showSearch && (
 						<div className="order-3 order-lg-4">
 							<SearchInput

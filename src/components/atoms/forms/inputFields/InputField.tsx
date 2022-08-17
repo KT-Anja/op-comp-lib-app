@@ -1,11 +1,14 @@
 import classNames from 'classnames'
-import { ChangeEvent, FocusEvent, InputHTMLAttributes, useState } from 'react'
+import { ChangeEvent, FocusEvent, InputHTMLAttributes, useRef, useState } from 'react'
+import Icon from '../../icon/Icon'
+import Popover from '../../popover/Popover'
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string
 	label: string
 	helperText?: string
 	errorMessage?: string
+	errorTooltip?: string
 	noMarginBottom?: boolean
 	onChange?: (event: React.ChangeEvent) => void
 	onFocus?: (event: React.FocusEvent) => void
@@ -17,6 +20,7 @@ const InputField = ({
 	label,
 	helperText,
 	errorMessage,
+	errorTooltip,
 	noMarginBottom,
 	onChange,
 	onFocus,
@@ -25,6 +29,7 @@ const InputField = ({
 }: InputFieldProps) => {
 	const [value, setValue] = useState<string>('')
 	const [isFocus, setIsFocus] = useState<boolean>(false)
+	const errorTooltipRef = useRef(null)
 
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setValue(event.target.value)
@@ -59,7 +64,7 @@ const InputField = ({
 			>
 				<input
 					className={classNames('form-control', {
-						'is-invalid': errorMessage
+						'is-invalid': errorMessage || errorTooltip
 					})}
 					id={id}
 					onChange={handleOnChange}
@@ -77,6 +82,14 @@ const InputField = ({
 				>
 					{label}
 				</label>
+				{errorTooltip && (
+					<span className="invalid-tooltip-indicator">
+						<Popover content={errorTooltip} classNames="invalid" targetRef={errorTooltipRef}>
+							<Icon ref={errorTooltipRef} keyName="fa-circle-info" />
+						</Popover>
+					</span>
+				)}
+
 				{helperText && <div className="form-text">{helperText}</div>}
 				{errorMessage && <div className="invalid-feedback">{errorMessage}</div>}
 			</div>
